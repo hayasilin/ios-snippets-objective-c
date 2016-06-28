@@ -1,0 +1,5 @@
+#iBeacon detection setting
+1. import CoreBluetooth and CoreLocation framework.
+2. Add NSLocationAlwaysUsageDescription and NSLocationWhenInUsageDescription in your info.plist.
+3. Add App Transport Security in your info.plist and set it to Yes.
+4. Add [self.locationManager requestAlwayAuthorization] and [self.locationManager requestWhenInUseAuthorization] in your ViewController's viewDidLoad section.
