@@ -14,4 +14,4 @@ The best way to use are:
 
 * Go through all code and implement it in your project
 * Simply press "command" + "f" to search for keyword
-* Send e-mail to me if you have any questions
+* Send [e-mail](kuanwei.hayasi@gmail.com) to me if you have any questions
