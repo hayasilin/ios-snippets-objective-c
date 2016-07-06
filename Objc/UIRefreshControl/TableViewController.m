@@ -1,36 +1,42 @@
 //
-//  SearchTableViewController.m
+//  TableViewController.m
 //  Component
 //
 //  Created by Kuan-Wei Lin on 7/5/16.
 //  Copyright © 2016 Kuan-Wei Lin. All rights reserved.
 //
 
-#import "SearchTableViewController.h"
+#import "TableViewController.h"
 
-@interface SearchTableViewController ()
+@interface TableViewController ()
 
 @property (strong, nonatomic) NSArray *dataArray;
+
 @property (strong, nonatomic) NSArray *searchResultArray;
 @property (strong, nonatomic) UISearchController *mySearchController;
 
 @end
 
-@implementation SearchTableViewController
+@implementation TableViewController
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.dataArray = @[@"David", @"Ellen", @"Peter", @"Tom", @"Jerry", @"Ellen", @"Peter", @"Tom", @"Jerry", @"Ellen", @"Peter", @"Tom", @"Jerry", @"Ellen", @"Peter", @"Tom", @"Jerry", @"Ellen", @"Peter", @"Tom", @"Jerry"];
-    //self.dataArray = @[@"David", @"Ellen", @"Peter", @"Tom", @"Jerry"];
+//    self.dataArray = @[@"David", @"Ellen", @"Peter", @"Tom", @"Jerry"];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    UIBarButtonItem *goTopButton = [[UIBarButtonItem alloc] initWithTitle:@"hideSearchBar" style:UIBarButtonItemStyleDone target:self action:@selector(hideSearchBar)];
+    UIBarButtonItem *goTopButton = [[UIBarButtonItem alloc] initWithTitle:@"Go" style:UIBarButtonItemStyleDone target:self action:@selector(goTop)];
     
     self.navigationItem.rightBarButtonItem = goTopButton;
-
+    
     self.mySearchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.mySearchController.searchResultsUpdater = self;
     self.mySearchController.dimsBackgroundDuringPresentation = NO;
@@ -42,21 +48,36 @@
     self.tableView.tableHeaderView = _mySearchController.searchBar;
     self.definesPresentationContext = YES;
     
-    //下方兩段功能一樣，皆是能夠隱藏tableHeaderView，但是tableView長度要超過window才有效果
-    //[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    //下方兩段功能一樣，皆是能夠隱藏tableHeaderView，但是tableView長度要超過view才有效果
+//    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     [self.tableView setContentOffset:CGPointMake(0, 44) animated:YES];
     
-    //如果資料不夠多，用延遲的方法可以隱藏SearchBar
-    //[self performSelector:@selector(hideSearchBar) withObject:nil afterDelay:0.01];
+    //UIRefreshControl
+    self.refreshControl = [UIRefreshControl new];
+    [self.refreshControl addTarget:self action:@selector(handleRefresh) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self.tableView reloadData];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Reloading..."];
+    
+    //讓View出現時隱藏SearchBar
     [self.tableView setContentOffset:CGPointMake(0, -20) animated:YES];
 }
 
-- (void)hideSearchBar{
+#pragma mark - UIRefreshControl
+- (void)handleRefresh{
+    //模擬資料更新需時2秒
+    [NSThread sleepForTimeInterval:2.0];
+    
+    self.dataArray = @[@"David", @"Ellen", @"Peter", @"Tom", @"Jerry"];
+    
+    [self.refreshControl endRefreshing];
+    [self.tableView reloadData];
+    //讓Reflash結束上拉後仍然隱藏SearchBar
+    [self.tableView setContentOffset:CGPointMake(0, -20) animated:YES];
+}
+
+- (void)goTop{
     [self.tableView setContentOffset:CGPointMake(0, -20) animated:YES];
 }
 
@@ -74,7 +95,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
@@ -85,7 +106,7 @@
     }else{
         cell.textLabel.text = self.dataArray[indexPath.row];
     }
-
+    
     return cell;
 }
 

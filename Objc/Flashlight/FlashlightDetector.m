@@ -8,6 +8,7 @@
 
 #import "FlashlightDetector.h"
 #import <AVFoundation/AVFoundation.h>
+#import <UIKit/UIKit.h>
 
 @interface FlashlightDetector ()
 
@@ -24,8 +25,6 @@
 
 @implementation FlashlightDetector
 
-#pragma mark - Flashlight
-
 + (instancetype)defaultDetector {
     static id sharedInstance = nil;
     
@@ -38,7 +37,6 @@
 }
 
 #pragma mark - Flashlight
-
 - (void)turnFlashlightOn {
     if ([UIImagePickerController isFlashAvailableForCameraDevice:UIImagePickerControllerCameraDeviceRear]){
         NSLog(@"此裝置有背面閃光燈");
@@ -63,6 +61,7 @@
             if(success){
                 [flashLight setTorchMode:AVCaptureTorchModeOff];
                 [flashLight unlockForConfiguration];
+                NSLog(@"閃光燈關閉");
             }
         }
     }else{
@@ -73,7 +72,7 @@
 - (void)FlashlightOnOffSwitch {
     
     self.loopCount++;
-    if (self.loopCount >= (self.times * 2)) {
+    if (self.loopCount >= (self.times *2)) {
         [self stopFlashlightAndTimer];
         self.loopCount = 0;
     }else{

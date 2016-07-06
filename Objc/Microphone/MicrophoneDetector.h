@@ -10,10 +10,13 @@
 
 @interface MicrophoneDetector : NSObject
 
+@property (nonatomic) BOOL isGranted;
+@property (strong, nonatomic) NSString *permissionStatusString;
 @property (nonatomic) int currentDecibel;
 @property (nonatomic) int maxDecibel;
 
 + (instancetype)defaultDetector;
+- (void)checkMicrophonePermission;
 - (void)startSoundDetector;
 - (void)startSoundDetectorWithSecond:(float)second;
 - (void)closeSoundDetector;
