@@ -144,6 +144,7 @@ static NSString * const gourmetHamburgerUrl = @"http://search.olp.yahooapis.jp/O
     
     NSLog(@"nameArray = %@", self.restaurantNameArray);
     NSLog(@"photoArray = %@", self.photoUrlArray);
+    NSLog(@"stationArray = %@", self.stationArray);
 
 }
 
@@ -198,8 +199,9 @@ static NSString * const gourmetHamburgerUrl = @"http://search.olp.yahooapis.jp/O
         // Set up the cell representing the app
         AppRecord *appRecord = (self.entries)[indexPath.row];
         
-        cell.nameLabel.text = self.restaurantNameArray[indexPath.row];
-        cell.stationLabel.text = self.stationArray[indexPath.row];
+        //下列的code可以在TableViewCell裡面實作
+        //cell.nameLabel.text = self.restaurantNameArray[indexPath.row];
+        //cell.stationLabel.text = self.stationArray[indexPath.row];
         cell.shop = self.shops[indexPath.row];
         
         // Only load cached images; defer new downloads until scrolling ends
