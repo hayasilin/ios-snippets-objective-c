@@ -68,7 +68,4 @@
     return UIInterfaceOrientationMaskAll;
 }
 
-
-
-
 @end
