@@ -31,7 +31,7 @@ static NSString * const imageUrlString = @"http://ingridwu.dmmdmcfatter.com/wp-c
 - (void)loadImageFromLocal{
     UIImage *image = [UIImage imageNamed:@"placeholder.jpg"];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50,50,200,200)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50,200,200,200)];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = image;
     [self.view addSubview:imageView];
@@ -40,7 +40,7 @@ static NSString * const imageUrlString = @"http://ingridwu.dmmdmcfatter.com/wp-c
 - (void)loadImageFromInternet{
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrlString]]];
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 300, 200, 200)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 400, 200, 200)];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.image = image;
     [self.view addSubview:self.imageView];
@@ -48,28 +48,45 @@ static NSString * const imageUrlString = @"http://ingridwu.dmmdmcfatter.com/wp-c
 
 - (IBAction)saveImageInDocument:(UIButton *)sender {
     
-    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/placeholder.png"];
+    //Another way to reach directory, use [0] to find the Document directory
+    //NSString* documentsPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    //NSLog(@"documentsPath = %@", documentsPath);
     
-    BOOL ok = [[NSFileManager defaultManager] createFileAtPath:path contents:nil attributes:nil];
+    //Get the document directory
+    NSString* documentsPath = [NSHomeDirectory() stringByAppendingString:@"/Documents/"];
+    NSString* imagefile = [documentsPath stringByAppendingPathComponent:@"placeholder.png"];
+    //Check if the file exists
+    BOOL imageExists = [[NSFileManager defaultManager] fileExistsAtPath:imagefile];
+    NSLog(imageExists ? @"imageExists YES" : @"imageExists NO");
     
-    if (!ok)
-    {
-        NSLog(@"Error creating file %@", path);
+    if (!imageExists) {
+    
+        NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/placeholder.png"];
+        BOOL ok = [[NSFileManager defaultManager] createFileAtPath:path contents:nil attributes:nil];
+        
+        if (!ok)
+        {
+            NSLog(@"Error creating file %@", path);
+        }
+        else
+        {
+            NSFileHandle* myFileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
+            [myFileHandle writeData:UIImagePNGRepresentation(self.imageView.image)];
+            [myFileHandle closeFile];
+        }
+        
+        [self getFileFromDocument];
     }
     else
     {
-        NSFileHandle* myFileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
-        [myFileHandle writeData:UIImagePNGRepresentation(self.imageView.image)];
-        [myFileHandle closeFile];
+        NSLog(@"The file is already exist in document");
     }
-    
-    [self getFileFromDocument];
 }
 
 - (void)getFileFromDocument{
-    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/placeholder.png"];
+    NSString* documentsPath = [NSHomeDirectory() stringByAppendingString:@"/Documents/placeholder.png"];
     
-    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:documentsPath];
     UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
     
     NSLog(@"Document loadedImage = %@", loadedImage);
@@ -84,23 +101,34 @@ static NSString * const imageUrlString = @"http://ingridwu.dmmdmcfatter.com/wp-c
         [[NSFileManager defaultManager] createDirectoryAtPath:dataPath withIntermediateDirectories:NO attributes:nil error:&error]; //Create folder
     }
     
-    //Start save files
-    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Library/Caches/imageHolder/placeholder.png"];
+    NSString* imagefile = [dataPath stringByAppendingPathComponent:@"placeholder.png"];
+    BOOL imageExists = [[NSFileManager defaultManager] fileExistsAtPath:imagefile];
+    NSLog(imageExists ? @"imageExists YES" : @"imageExists NO");
     
-    BOOL ok = [[NSFileManager defaultManager] createFileAtPath:path contents:nil attributes:nil];
-    
-    if (!ok)
-    {
-        NSLog(@"Error creating file %@", path);
+    if (!imageExists) {
+        
+        //Start save files
+        NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Library/Caches/imageHolder/placeholder.png"];
+        
+        BOOL ok = [[NSFileManager defaultManager] createFileAtPath:path contents:nil attributes:nil];
+        
+        if (!ok)
+        {
+            NSLog(@"Error creating file %@", path);
+        }
+        else
+        {
+            NSFileHandle* myFileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
+            [myFileHandle writeData:UIImagePNGRepresentation(self.imageView.image)];
+            [myFileHandle closeFile];
+        }
+        
+        [self getFileFromCache];
     }
     else
     {
-        NSFileHandle* myFileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
-        [myFileHandle writeData:UIImagePNGRepresentation(self.imageView.image)];
-        [myFileHandle closeFile];
+        NSLog(@"The file is already exist in cache");
     }
-    
-    [self getFileFromCache];
 }
 
 - (void)getFileFromCache{
