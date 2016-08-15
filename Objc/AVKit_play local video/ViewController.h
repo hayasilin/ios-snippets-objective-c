@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  Component
+//  Components3
 //
-//  Created by Kuan-Wei Lin on 6/18/16.
+//  Created by Kuan-Wei Lin on 8/5/16.
 //  Copyright © 2016 Kuan-Wei Lin. All rights reserved.
 //
 

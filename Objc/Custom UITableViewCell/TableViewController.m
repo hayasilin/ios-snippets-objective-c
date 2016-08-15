@@ -21,7 +21,7 @@
     
     self.dataArray = @[@"First", @"Second", @"Three", @"Four", @"Five", @"Second", @"Three", @"Four", @"Five", @"Second", @"Three", @"Four", @"Five", @"Second", @"Three", @"Four", @"Five"];
     
-    [self.tableView registerClass:[TableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 }
 
 #pragma mark - Table view data source
