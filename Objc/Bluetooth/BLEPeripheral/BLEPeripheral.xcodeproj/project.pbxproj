@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC6E33681E292A3600905CF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E33671E292A3600905CF3 /* main.m */; };
+		AC6E336B1E292A3600905CF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E336A1E292A3600905CF3 /* AppDelegate.m */; };
+		AC6E336E1E292A3600905CF3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E336D1E292A3600905CF3 /* ViewController.m */; };
+		AC6E33711E292A3600905CF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6E336F1E292A3600905CF3 /* Main.storyboard */; };
+		AC6E33731E292A3600905CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC6E33721E292A3600905CF3 /* Assets.xcassets */; };
+		AC6E33761E292A3600905CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6E33741E292A3600905CF3 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC6E33631E292A3600905CF3 /* BLEPeripheral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEPeripheral.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC6E33671E292A3600905CF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC6E33691E292A3600905CF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AC6E336A1E292A3600905CF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AC6E336C1E292A3600905CF3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AC6E336D1E292A3600905CF3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AC6E33701E292A3600905CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC6E33721E292A3600905CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC6E33751E292A3600905CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC6E33771E292A3600905CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC6E33601E292A3500905CF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC6E335A1E292A3500905CF3 = {
+			isa = PBXGroup;
+			children = (
+				AC6E33651E292A3600905CF3 /* BLEPeripheral */,
+				AC6E33641E292A3600905CF3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC6E33641E292A3600905CF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E33631E292A3600905CF3 /* BLEPeripheral.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC6E33651E292A3600905CF3 /* BLEPeripheral */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E33691E292A3600905CF3 /* AppDelegate.h */,
+				AC6E336A1E292A3600905CF3 /* AppDelegate.m */,
+				AC6E336C1E292A3600905CF3 /* ViewController.h */,
+				AC6E336D1E292A3600905CF3 /* ViewController.m */,
+				AC6E336F1E292A3600905CF3 /* Main.storyboard */,
+				AC6E33721E292A3600905CF3 /* Assets.xcassets */,
+				AC6E33741E292A3600905CF3 /* LaunchScreen.storyboard */,
+				AC6E33771E292A3600905CF3 /* Info.plist */,
+				AC6E33661E292A3600905CF3 /* Supporting Files */,
+			);
+			path = BLEPeripheral;
+			sourceTree = "<group>";
+		};
+		AC6E33661E292A3600905CF3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E33671E292A3600905CF3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC6E33621E292A3500905CF3 /* BLEPeripheral */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC6E337A1E292A3600905CF3 /* Build configuration list for PBXNativeTarget "BLEPeripheral" */;
+			buildPhases = (
+				AC6E335F1E292A3500905CF3 /* Sources */,
+				AC6E33601E292A3500905CF3 /* Frameworks */,
+				AC6E33611E292A3500905CF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BLEPeripheral;
+			productName = BLEPeripheral;
+			productReference = AC6E33631E292A3600905CF3 /* BLEPeripheral.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC6E335B1E292A3500905CF3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Loungehall;
+				TargetAttributes = {
+					AC6E33621E292A3500905CF3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = G62233X968;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AC6E335E1E292A3500905CF3 /* Build configuration list for PBXProject "BLEPeripheral" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC6E335A1E292A3500905CF3;
+			productRefGroup = AC6E33641E292A3600905CF3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC6E33621E292A3500905CF3 /* BLEPeripheral */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC6E33611E292A3500905CF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC6E33761E292A3600905CF3 /* LaunchScreen.storyboard in Resources */,
+				AC6E33731E292A3600905CF3 /* Assets.xcassets in Resources */,
+				AC6E33711E292A3600905CF3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC6E335F1E292A3500905CF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC6E336E1E292A3600905CF3 /* ViewController.m in Sources */,
+				AC6E336B1E292A3600905CF3 /* AppDelegate.m in Sources */,
+				AC6E33681E292A3600905CF3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC6E336F1E292A3600905CF3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC6E33701E292A3600905CF3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC6E33741E292A3600905CF3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC6E33751E292A3600905CF3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC6E33781E292A3600905CF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AC6E33791E292A3600905CF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC6E337B1E292A3600905CF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G62233X968;
+				INFOPLIST_FILE = BLEPeripheral/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.loungehall.BLEPeripheral;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AC6E337C1E292A3600905CF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G62233X968;
+				INFOPLIST_FILE = BLEPeripheral/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.loungehall.BLEPeripheral;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC6E335E1E292A3500905CF3 /* Build configuration list for PBXProject "BLEPeripheral" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC6E33781E292A3600905CF3 /* Debug */,
+				AC6E33791E292A3600905CF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC6E337A1E292A3600905CF3 /* Build configuration list for PBXNativeTarget "BLEPeripheral" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC6E337B1E292A3600905CF3 /* Debug */,
+				AC6E337C1E292A3600905CF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC6E335B1E292A3500905CF3 /* Project object */;
+}
