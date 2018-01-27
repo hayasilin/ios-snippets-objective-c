@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C205" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="plate" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongto" maxCount="1" deletionRule="Nullify" destinationEntity="UserData" inverseName="own" inverseEntity="UserData" syncable="YES"/>
+    </entity>
+    <entity name="UserData" representedClassName="UserData" syncable="YES">
+        <attribute name="cname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="own" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="belongto" inverseEntity="Car" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="UserData" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Car" positionX="133" positionY="33" width="128" height="73"/>
+    </elements>
+</model>
